@@ -15,6 +15,8 @@ def on_press(key):
             scale = scale - 1
         elif key.name == 'tab':
             fluidsynth.play_Note(starting_key -2, 0, 127)
+        elif key.name == 'space':
+            fluidsynth.stop_everything()
         if scale > 7:
             scale = 7
         if scale < 0:
