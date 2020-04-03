@@ -13,6 +13,8 @@ def on_press(key):
             scale = scale + 1
         elif key.name == 'page_down':
             scale = scale - 1
+        elif key.name == 'tab':
+            fluidsynth.play_Note(starting_key -2, 0, 127)
         if scale > 7:
             scale = 7
         if scale < 0:
@@ -20,7 +22,9 @@ def on_press(key):
         starting_key = 12 * scale
 
     if hasattr(key, 'char'):
-        if key.char == 'q':
+        if key.char == '1':
+            fluidsynth.play_Note(starting_key + 1, 0, 127)
+        elif key.char == 'q':
             fluidsynth.play_Note(starting_key + 0, 0, 127)
         elif key.char == '2':
             fluidsynth.play_Note(starting_key + 1, 0, 127)
@@ -88,20 +92,18 @@ def on_press(key):
             fluidsynth.play_Note(starting_key + 32, 0, 127)
         elif key.char == ',':
             fluidsynth.play_Note(starting_key + 33, 0, 127)
-        elif key.char == 'k':
-            fluidsynth.play_Note(starting_key + 34, 0, 127)
         elif key.char == 'l':
-            fluidsynth.play_Note(starting_key + 35, 0, 127)  # SI
+            fluidsynth.play_Note(starting_key + 34, 0, 127)
         elif key.char == '.':
-            fluidsynth.play_Note(starting_key + 36, 0, 127)  # DO 4
-        elif key.char == 'ç':
-            fluidsynth.play_Note(starting_key + 37, 0, 127)
+            fluidsynth.play_Note(starting_key + 35, 0, 127)  # SI
         elif key.char == ';':
-            fluidsynth.play_Note(starting_key + 38, 0, 127)
+            fluidsynth.play_Note(starting_key + 36, 0, 127)  # DO 4
         elif key.char == '~':
-            fluidsynth.play_Note(starting_key + 39, 0, 127)
+            fluidsynth.play_Note(starting_key + 37, 0, 127)
         elif key.char == '/':
-            fluidsynth.play_Note(starting_key + 40, 0, 127)  # MI
+            fluidsynth.play_Note(starting_key + 38, 0, 127)
+        elif key.char == ']':
+            fluidsynth.play_Note(starting_key + 39, 0, 127)
 
 
 # Collect events until released
