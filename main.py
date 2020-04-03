@@ -25,7 +25,7 @@ def on_press(key):
 
     if hasattr(key, 'char'):
         if key.char == '1':
-            fluidsynth.play_Note(starting_key + 1, 0, 127)
+            fluidsynth.play_Note(starting_key - 1, 0, 127)
         elif key.char == 'q':
             fluidsynth.play_Note(starting_key + 0, 0, 127)
         elif key.char == '2':
